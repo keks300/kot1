@@ -1,5 +1,5 @@
 fun main() {
-    println("Введите 3 перемеменные через пробелл: (ЧИСЛО1 ЧИСЛО2 ОПЕРАЦИЯ) ")
+    println("Введите 3 значения через пробел ")
     val str = readLine()
     var str2 = str?.split(" ")
     val a = str2!![0].toInt()
