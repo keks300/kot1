@@ -10,12 +10,12 @@ fun main() {
         var y = 0
         while (x.pow(y) != n) {
             if (x.pow(y) > n) {
-                println("Целочисленный показатель не существует")
+                println("Такого значения нет")
                 return
             }
             y++
         }
-        println("Целочисленный показатель степени y: $y")
+        println("y должен быть равен - $y")
     } else {
         println("Ошибка ввода")
     }
