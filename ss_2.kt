@@ -1,19 +1,27 @@
+//Создать приложение, которое подсчитывает количество различных символов во введенной строке. 
+// Символы в ответе расположить в алфавитном порядке. Например, дана строка AASADDSS. 
+// На выходе получаем:
+//A - 3
+//D - 2
+//S - 3
+
 fun f(stro: String) {
-    val c = HashMap<Char, Int>()
-    for (count in stro) {
-        if (c.containsKey(count)) {
+    val c = HashMap<Char, Int>() // Создаем пустой HashMap для подсчета количества встречающихся символов
+    for (count in stro) { // Перебираем все символы во входной строке
+        if (c.containsKey(count)) { // Если символ уже есть в HashMap, увеличиваем его значение на 1
             c[count] = c[count]!! + 1
-        } else {
+        } else { // Если символа еще нет в HashMap, добавляем его и устанавливаем значение 1
             c[count] = 1
         }
     }
-    val end = c.keys.sorted()
-    for (count in end) {
+    val end = c.keys.sorted() // Получаем отсортированный список уникальных символов
+    for (count in end) { // Перебираем уникальные символы и выводим количество их повторений
         println("$count - ${c[count]}")
     }
 }
+
 fun main () {
     println("Введите строку символов: ")
-    val stro = readLine().toString()
-    f(stro)
+    val stro = readLine().toString() // Считываем входную строку с консоли
+    f(stro) // Вызываем функцию для обработки входной строки
 }
